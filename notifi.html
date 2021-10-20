@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Desktop Notification</title>
+</head>
+<body>
+   <h3>Desktop Notification</h3>
+   <button onclick="setTimeout(notification,100)">Activate Notification</button>
+   <SCRIPT TYPE="text/javascript" >
+   document.addEventListener('DOMContentLoaded',function(){
+if(Notification.permission!== "granted")
+   Notification.requestPermission();
+   });
+   function notification()
+   {
+           if(!Notification){
+    alert('Desktop notification not support in your browser. Try Google Chrome.');
+    return;
+   }
+if(Notification.permission!=="granted")
+   Notification.requestPermission();
+else
+{
+var notification=new Notification('title',{
+    icon:'agriimage.jpg',
+    body:'message'
+});
+}     
+notification.onclick=function(){
+window.open("https://www.google.com/");
+}
+} 
+    </SCRIPT>
+
+</body>
+</html>
